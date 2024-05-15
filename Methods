@@ -1,0 +1,16 @@
+Issue: Can not turn on Virus and Threat Protection/ Real time Protection in Windows 10
+Solution:
+Method 1: Uninstall third party antivirus Software
+Method 2: Restart Security Centre Service
+Method 3: Run SFC SCAN using command prompt and run this command "sfc /scannow"
+Method 4: Run DISM scan using the command "DISM /Online /Cleanup-Image /RestoreHealth"
+Method 5: Update Windows OS to the latest version.
+Method 6: Check WinDefend Service is running or not.
+          - Open Task Manager. Go to Services and Check WinDefend Service
+          - If WinDefend Service is unavailable, Run regedit.exe as an administrator and Check the follwing path for WinDefend registry 
+             HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend
+          - If the registry is not present, import the Windows Defender Default Registry files (uploaded) and restart the system.
+Method 7: Check Local Group Policy : Computer Configuration > Administrative Templated > Windows Components > Windows Defender Antivirus > 
+          Either Disable or Not Configured the setting "Turn off Windows Defender Antivirus"
+          Restart the system after changing policy.
+ 
